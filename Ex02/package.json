@@ -1,0 +1,13 @@
+{
+  "name": "ex02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "client": "node ./client1.js",
+    "server": "node ./server1.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
