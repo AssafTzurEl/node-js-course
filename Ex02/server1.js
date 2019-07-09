@@ -22,10 +22,14 @@ module.exports = {
     end: endServer
 };
 
-console.log("Starting server...");
-initServer();
+function run() {
+    console.log("Starting server...");
+    initServer();
 
-setTimeout(() => {
-    endServer();
-    console.log("Server shut down.");
-}, 30000);
+    setTimeout(() => {
+        endServer();
+        console.log("Server shut down.");
+    }, 20000);
+}
+
+run();

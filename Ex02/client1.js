@@ -19,8 +19,12 @@ function callServer() {
     });
 }
 
-const count = 10;
+function run() {
+    const count = 10;
 
-for (let index = 0; index < count; ++index) {
-    setTimeout(callServer, 0);
+    for (let index = 0; index < count; ++index) {
+        setTimeout(callServer, 0);
+    }
 }
+
+run();
