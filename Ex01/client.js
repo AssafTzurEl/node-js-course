@@ -3,6 +3,7 @@
 let http = require('http');
 
 function callServer() {
+    console.log("Calling server...");
     http.get('http://localhost:8080', resp => {
         let data = '';
 
