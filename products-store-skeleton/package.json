@@ -1,0 +1,37 @@
+{
+  "name": "products-store",
+  "version": "1.0.0",
+  "description": "Products Store exercise",
+  "main": "index.js",
+  "scripts": {
+    "build:run": "tsc",
+    "build:clean": "rimraf dist",
+    "build": "npm run build:clean && npm run build:run",
+    "serve": "node dist/index.js",
+    "start": "npm run build && npm run serve",
+
+    "lint:ts": "./node_modules/.bin/tslint --project . --format codeFrame",
+    "lint:ts:fix": "npm -s run lint:ts -- --fix",
+
+    "watch:ts": "tsc -w",
+    "watch:js": "nodemon dist/index.js",
+    "watch": "tsc-watch --onSuccess \"npm run watch:js\"",
+
+    "dev": "ts-node src/index.ts",
+    "nodemon-start": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.3.0",
+    "tsc-watch": "^2.2.1",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "eslint": "^6.1.0"
+  }
+}
