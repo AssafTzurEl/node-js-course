@@ -2,6 +2,7 @@
 
 const cluster = require('cluster');
 const http = require('http');
+const events = require('events');
 
 const NUM_WORKERS = 4;
 
@@ -20,18 +21,19 @@ function initServer() {
           console.log(`worker ${worker.process.pid} died`);
         });
       } else {
-        server = http.Server((req, res) => {
-            setTimeout(() => {
-                res.writeHead(200);
-                res.end("Success");
-            }, 2000);
+        server = http.Server(async (req, res) => {
+            await sleep(2000);
+            res.writeHead(200);
+            res.end("Success");
         }).listen(8080);
           
         console.log(`Worker ${process.pid} started`);
       }
-
 }
 
+function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
 function endServer() {
     if (server != undefined) {
         server.close();
